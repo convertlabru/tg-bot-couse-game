@@ -44,10 +44,9 @@ const start = async () => {
         const data = msg.data;
         const chatId = msg.message.chat.id;
         if(data === '/again') {
-            return startGame(chatId);
+            return startGame(chatId)
         }
         if(data === chats[chatId]) {
-            return startGame(chatId);
             return bot.sendMessage(chatId, `Поздравляю, ты отгадал цифру ${chats[chatId]}`, againOptions)
         } else {
             return bot.sendMessage(chatId, `К сожалению не угадал, бот загадал цифру ${chats[chatId]}`, againOptions)
